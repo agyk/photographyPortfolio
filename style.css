@@ -1,40 +1,65 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+
 *{
     margin: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif */
 }
 body{
     color: white;
+    font-family: 'Open Sans', sans-serif;
 }
+
+
 #mainDiv{
     background-image: url(img/IMG_0142.jpg);
-    background-color: black;
     position: relative;
+    background-color: black;
     top: 0;
     left: 0;
     width: 100%;
-    height:100vh;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size:contain;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: image 25s infinite ease-in-out;
+    
     
 }
-
+@keyframes image {
+    0%{
+      background-image: url("img/IMG_2581_v2.jpg");
+    }
+    33%{
+      background-image: url("img/IMG_0142.jpg");
+    }
+    66%{
+      background-image: url("img/IMG_9834.jpg");
+    }
+    100%{
+      background-image: url("img/IMG_7921.jpg");
+    }
+  }
 nav{
     position: absolute;
-    top:50px;
-    right: 50px;
+    top:0;
+    right: 0;
+    width: 30%;
+    height: 100vh;
     color: white;
-    
-    font-size: 2rem;
+    background-color: rgb(0, 0, 0);
+    font-size: 2vw;
 }
 
 .menu{
     position: relative;
-    /* top: 150px; */
+    top: 50px; 
+    right: 50px;
     display: flex;
     flex-direction: column;
     text-align: right;
@@ -61,7 +86,7 @@ a:hover{
 
 .menu>li:hover ul{
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     margin: 20px;
 }
 
@@ -81,10 +106,14 @@ a:hover{
     
 
 }
+
+
  h1{
     width: 50%;
     color: white;
     text-align: right;
+    font-size: 5vw;
+
   }
 
 #cta-btn{
@@ -93,8 +122,8 @@ a:hover{
     font-weight: 800;
     border: 2px solid white;
     background-color: transparent;
-    font-size: 34px;
-    padding: 5px 25px;
+    font-size: 2.8vw;
+    padding: 0.4rem 1.5rem;
     cursor: pointer;
     color: white;
     
@@ -106,9 +135,7 @@ a:hover{
     mix-blend-mode: screen;
 }
 
-h1{
-    font-size: 64px;
-  }
+
 
 h2{
     padding: 2rem;
@@ -158,13 +185,21 @@ h2{
     height: 100%;
     z-index: 1000;
    
-    
-    
+  
 }
 
+@media screen and (max-width:880px) {
+  
+    .bigImg img{
+        /*height: 25vh;*/
+        width: 25vh;
+    }
+}
 .bigImg img{
-    height: 80%;
-    transform: translate(0%, 10%);
+    width: 35%;
+    /* transform: translate(0%, 20%); */
+    position: relative;
+   top:15%;
 }
 
 .close{
@@ -182,14 +217,33 @@ h2{
     padding: 2rem;
 }
 
+#other{
+    background-color: black;
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+}
+
 #about{
     
     background-color: rgb(39, 30, 27);
     padding: 2rem;
     width: 100%;
-    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
   }
 
   #about img{
     width: 200px;
+  }
+
+  footer{
+    background-color: black;
+    text-align: center;
+    margin: 0 auto;
+    padding: 5rem;
   }
